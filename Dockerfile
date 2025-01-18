@@ -7,6 +7,8 @@ WORKDIR /app
 # Copy the script and requirements to the container
 COPY . .
 
+EXPOSE 5000
+
 # Install dependencies
 RUN pip install facebook-business google-api-python-client Flask praw
 
