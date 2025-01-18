@@ -28,7 +28,7 @@ def fetch_reddit_posts():
 
 
 @app.route('/api/youtubevideos', methods=['POST'])
-def fetch_youtube_videos():
+def youtube():
     """
     Handle YouTube search requests by query and fetch videos with limited comments.
     """
