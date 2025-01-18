@@ -8,8 +8,7 @@ WORKDIR /app
 COPY . .
 
 # Install dependencies
-RUN pip install facebook-business 
-# google-api-python-client Flask praw
+RUN pip install facebook-business google-api-python-client Flask praw
 
 # Define the command to run the script
-CMD ["python", "main.py"]
+CMD ["python", "server.py"]
