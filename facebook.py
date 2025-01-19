@@ -2,8 +2,9 @@ from facebook_business.adobjects.adaccount import AdAccount
 from facebook_business.api import FacebookAdsApi
 
 # Replace these with your actual credentials
-ACCESS_TOKEN = '401cc9babbeed334d86aba0b598ee302'
-ad_account_id = 'act_508765605026449'  # Ad Account ID in the format "act_<ID>"
+ACCESS_TOKEN = '1768417790664366|0KqqfwEGA00OK_7_6Z7ixvCCuHM'
+# ad_account_id = 'act_1768417790664366'  # Ad Account ID in the format "act_<ID>"
+ad_account_id = 'EAAZAIXdo6Hq4BO9chV37YOyrWTtZA328FOZAHgE5wWNRhBgA53xBsTIDkweuuof8z86lXk8hpTidnIC8OYaGsSUXrvrFHFuiBxUQB3ZBKBfynX5fDU2XMc4ZAIm6CjyC0YytAWl79EZCQkmQ4TCMhWORD7TUVbqXOZBJ7ATcD0ZCXmaqw2RL3aFB0a7fcIZAejl9FCXv2p5QmZCAnuPTG9QgZDZD'  # Ad Account ID in the format "act_<ID>"
 FacebookAdsApi.init(access_token=ACCESS_TOKEN)
 
 def get_facebook_ads(query, limit=5):
@@ -50,8 +51,8 @@ def get_facebook_ads(query, limit=5):
         return []
 
 # Example usage
-if __name__ == "__main__":
-    search_query = "marketing"  # Replace with your desired query
-    ads_data = get_facebook_ads(search_query, limit=5)
-    for ad in ads_data:
-        print(ad)
+# if __name__ == "__main__":
+#     search_query = "marketing"  # Replace with your desired query
+#     ads_data = get_facebook_ads(search_query, limit=5)
+#     for ad in ads_data:
+#         print(ad)

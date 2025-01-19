@@ -47,7 +47,6 @@ def get_video_data(query, max_results=5):
             for comment in comment_response.get("items", []):
                 comment_text = comment["snippet"]["topLevelComment"]["snippet"]["textDisplay"]
                 comments.append(comment_text)
-                i=i+1
 
 
         except Exception as e:

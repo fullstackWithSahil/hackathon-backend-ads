@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from youtube import get_video_data  # Ensure this is implemented or imported correctly
 from reddit import get_reddit_posts
-from main import get_facebook_ads
+from facebook import get_facebook_ads
 
 app = Flask(__name__)
 
