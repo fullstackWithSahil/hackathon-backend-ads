@@ -1,6 +1,6 @@
 import praw
 
-def get_reddit_posts(query,max_results=5):
+def get_reddit_posts(query,max_results=10):
     # Initialize Reddit client
     reddit = praw.Reddit(
         client_id="N_AYBLNuIny9RAncTdyxjw",

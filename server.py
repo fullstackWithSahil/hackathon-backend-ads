@@ -1,9 +1,12 @@
+# server.py
 from flask import Flask, request, jsonify
 from youtube import get_video_data  # Ensure this is implemented or imported correctly
 from reddit import get_reddit_posts
 from facebook import get_facebook_ads
+from flask_cors import CORS 
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/api/redditposts', methods=['POST'])
 def fetch_reddit_posts():
@@ -27,6 +30,7 @@ def fetch_reddit_posts():
         return jsonify({"error": str(e)}), 500
 
 
+
 @app.route('/api/youtubevideos', methods=['POST'])
 def youtube():
     """
@@ -34,18 +38,20 @@ def youtube():
     """
     if not request.is_json:
         return jsonify({"error": "Request body must be JSON"}), 400
-
+    
     data = request.get_json()
     query = data.get("query")
-    maxResults = int(data.get("maxResults"))
+    maxResults = int(data.get("maxResults", 5))  # Default to 5 if not provided
+    
     if not query:
         return jsonify({"error": "Missing 'query' in JSON body"}), 400
-
+    
     try:
-        result = get_video_data(query, 3)  # Ensure this function works correctly
-        return jsonify(result,maxResults)
+        result = get_video_data(query, maxResults)
+        return jsonify(result)  # Return just the result, not result,maxResults
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
 
 @app.route('/api/facebookads', methods=['POST'])
 def fetch_youtube_videos():
